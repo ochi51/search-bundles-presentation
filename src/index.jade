@@ -1,0 +1,126 @@
+mixin slide(names, slideClasses)
+  if names
+    section(class=names + ' ' + slideClasses, data-bespoke-backdrop='backdrop ' + names.split(' ').map(function (name) {
+      return 'backdrop--' + name;
+    }).join(' '))
+      block
+  else
+    section
+      block
+
+doctype html
+html
+  head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+  title kintone devCamp Vol.1
+
+  link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+    article
+      +slide('orion')
+        h3 Symfony Meetup #2
+
+      +slide('orion')
+        h1 自己紹介
+      +slide
+        h2 名前
+        h3 落合 雄一
+      +slide
+        h2 所属
+        h3 サイボウズスタートアップス株式会社
+      +slide
+        h3 何故かBundle Masterと呼ばれる・・・
+
+      +slide('orion')
+        h1 Bundle
+
+      +slide
+        h3 Bundleって？
+      +slide
+        h1 英和辞典によれば
+        h3 束, 包み, かたまり, 一団, 大金
+      +slide
+        h3 なんとなくまとまってる感じかな
+
+      +slide
+        h3 Symfonyには本当にいろんなBundleがあります!!
+
+      +slide('orion')
+        h3 代表的なBundle
+      +slide
+        h5 FOSUserBundle
+        h5 KnpGaufretteBundle
+        h5 KnpRadBundle
+        h5 EasyAdminBundle
+
+      +slide('orion')
+        h1 Bundleの探し方
+      +slide
+        h3
+          a(href="http://qiita.com/ochi51/items/7c56dc8ecdeb69449370", target="_blank") The 30 Most Useful Symfony Bundles
+      +slide
+        h3
+          a(href="https://github.com/EmanueleMinotto/awesome-symfony2", target="_blank") Awesome Symfony 2
+      +slide
+        h3
+          a(href="https://github.com/search?l=PHP&o=desc&q=bundle&s=stars&type=Repositories&utf8=✓", target="_blank") GitHubで検索
+      +slide
+        h3
+          a(href="http://knpbundles.com/", target="_blank") Knp Bundlesで検索
+      +slide
+        h3
+          a(href="http://phptrends.com/category/1", target="_blank") PHPTrendsで検索
+
+      +slide('orion')
+        h3 俺のComposer
+        pre.language-javascript
+          code.
+            "require": {
+                "php": ">=5.6.4",
+                "symfony/symfony": "~2.6.5",
+                "symfony/swiftmailer-bundle": "~2.3",
+                "symfony/monolog-bundle": "~2.4",
+                "doctrine/orm": "~2.5",
+                "doctrine/doctrine-bundle": "~1.2",
+                "sensio/distribution-bundle": "~3.0@dev",
+                "knplabs/rad-bundle": "~2.6",
+                "twig/extensions": "~1.0",
+                "symfony/assetic-bundle": "~2.3",
+                "doctrine/doctrine-fixtures-bundle": "~2.2@dev",
+                "doctrine/data-fixtures": "~1.0@dev",
+                "knplabs/knp-paginator-bundle": "dev-master",
+                "stof/doctrine-extensions-bundle": "dev-master",
+                "sensio/generator-bundle": "2.3.*",
+                "doctrine/migrations": "*@dev",
+                "doctrine/doctrine-migrations-bundle": "dev-master@dev",
+                "sensio/framework-extra-bundle": "dev-master",
+                "friendsofsymfony/user-bundle": "~2.0@dev",
+                "friendsofsymfony/rest-bundle": "*",
+                "jms/serializer-bundle": "*",
+                "yethee/enum-bundle": "*",
+                "vich/uploader-bundle": "dev-master",
+                "knplabs/knp-gaufrette-bundle" : "dev-master",
+                "sonata-project/doctrine-orm-admin-bundle": "2.4.*@dev",
+                "sonata-project/cache-bundle": "~2.2@dev",
+                "onigoetz/fpdi_tcpdf": "dev-master",
+                "hackzilla/barcode-bundle": "dev-master",
+                "alchemy/zippy": "0.2.*@dev",
+                "jms/job-queue-bundle": "1.1.*",
+                "braincrafted/bootstrap-bundle": "2.1.*",
+                "cleentfaar/slack-bundle": "dev-master",
+                "cstap/kintone-sdk-php": "dev-master",
+                "willdurand/js-translation-bundle": "@stable"
+            }
+
+      +slide('orion')
+        h3 最近気になるBundle
+      +slide
+        h3 EasyAdminBundle
+        h3 CommandSchedulerBundle
+
+      +slide
+        h3 ご清聴ありがとうございました！！
+
+    script(src='build/build.js')
